@@ -1,12 +1,26 @@
+/******************* Copyright *********************
+        Copyright (C) 2020 lhmagic
+        lhmagic@139.com
+        All right reserved.
+ **************************************************/
+
 #ifndef __CRCCALC_H__
-#define __CRCCALC_H__ 
+#define __CRCCALC_H__
+
+#ifdef __cplusplus
+ extern "C" {
+#endif //__cplusplus
 
 #include "common.h"
 
-//select a crc parameter.
-#define CRC_32_MPEG_2
+/**************************************************
+  Select a CRC parameter.
+ **************************************************/
+//#define CRC_16_MODBUS
 
-// CRC parameters template.
+/**************************************************
+  CRC parameter template.
+ **************************************************/
 #if defined CRC_8
 	#define	CRC_POLY		0x07
 	#define	CRC_INIT		0x00
@@ -87,8 +101,14 @@
 #endif
 
 
+
+void CreateCrcTable(void);
 uint8_t Crc8Calc(uint8_t *buff, uint32_t len);
 uint16_t Crc16Calc(uint8_t *buff, uint32_t len);
 uint32_t Crc32Calc(uint8_t *buff, uint32_t len);
+
+#ifdef __cplusplus
+}
+#endif //__cplusplus
 
 #endif	//__CRCCALC_H__ 

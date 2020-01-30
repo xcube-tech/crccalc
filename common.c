@@ -1,3 +1,9 @@
+/******************* Copyright *********************
+        Copyright (C) 2020 lhmagic
+        lhmagic@139.com
+        All right reserved.
+ **************************************************/
+
 #include "common.h"
 
 /******************* swap half word *********************

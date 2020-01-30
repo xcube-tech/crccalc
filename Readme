@@ -1,0 +1,5 @@
+实现了通用的CRC算法，包含CRC-8,CRC-16和CRC-32，程序采用了查表法，加速CRC的计算，使用时需先调用CreateCrcTable生成相应的快速查找表，然后调用相应的CRC计算函数。CRC-16和CRC-32计算结果的返回值高位在前，低位在后。程序中预设了常用的CRC参数，可以添加编译器开关-D CRC_XXX 来开启。程序使用了C99的部分特性，编译时需加上-std=c99才能正常编译，如：
+gcc -std=c99 -D CRC_16_MODBUS -o main main.c crccalc.c common.c && ./main
+或者采用C++编译器，如：
+g++ -D CRC_16_MODBUS -o main main.c crccalc.c common.c && ./main
+
