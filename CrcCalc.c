@@ -36,9 +36,9 @@ void CreateCrcTable(void) {
 uint8_t poly = ReverseUint8(CRC_POLY);
 #else
 uint8_t poly = CRC_POLY;
+uint8_t msb = 0x80;
 #endif
 uint8_t crc = 0;
-uint8_t msb = 0x80;
 #elif defined (CRC_16_IBM) || defined (CRC_16_MAXIM) || defined (CRC_16_USB) || \
       defined (CRC_16_MODBUS) || defined (CRC_16_CCITT) ||defined (CRC_16_CCITT_FALSE) || \
       defined (CRC_16_X25) || defined (CRC_16_XMODEM) || defined (CRC_16_DNP)
@@ -46,17 +46,17 @@ uint8_t msb = 0x80;
 uint16_t poly = ReverseUint16(CRC_POLY);
 #else
 uint16_t poly = CRC_POLY;
+uint16_t msb = 0x8000;
 #endif
 uint16_t crc = 0;
-uint16_t msb = 0x8000;
 #elif defined (CRC_32) || defined (CRC_32_MPEG_2)
 #if (CRC_BIT_REV == true)
 uint32_t poly = ReverseUint32(CRC_POLY);
 #else
 uint32_t poly = CRC_POLY;
+uint32_t msb = 0x80000000;
 #endif
 uint32_t crc = 0;
-uint32_t msb = 0x80000000;
 #endif
 
     for(uint16_t i=0; i<256; i++) {
