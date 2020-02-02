@@ -8,6 +8,7 @@
 #include "crccalc.h"
 
 int main(void) {
+	//Generate the crc table first.
     CreateCrcTable();
 #if defined	(CRC_8) || defined (CRC_8_ITU) || defined (CRC_8_ROHC) || defined(CRC_8_MAXIM)    
     printf("\r\nTest result:%#x\r\n", Crc8Calc((uint8_t *)"0123456789", 10));
